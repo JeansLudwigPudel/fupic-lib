@@ -1,7 +1,7 @@
 # Functional Programming in C-Language
 - [X] Partial function application
 - [X] Anonymous functions
-- [X] Functors 
+- [ ] Functors 
 - [ ] Applicative functors
 - [ ] Monads
 
