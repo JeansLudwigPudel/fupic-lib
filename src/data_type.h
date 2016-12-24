@@ -42,18 +42,18 @@
     };
 
 #define GEN_DATA_CONSTR_STATE( DATA_NAME)                                   \
-    
+   DATA_NAME
 
 /*
  * General data_type generator
  */
 #define DATA_TYPE(DESCR)                                                    \
-    struct _SNAKE(data, GET_DATA_NAME(DESCR)) {                             \
-        APPLY_TO_DATA_CONSTR(DESCR, GEN_DATA_CONSTR)\
+    typedef struct _SNAKE(data, GET_DATA_NAME(DESCR)) {                     \
+        APPLY_TO_DATA_CONSTR(DESCR, GEN_DATA_CONSTR)                        \
         enum {                                                              \
             APPLY_TO_DATA_EMPTY_CONSTR(DESCR, GEN_DATA_CONSTR_STATE)        \
         } state;                                                            \
-    };                                                                      \
+    } GET_DATA_NAME(DESCR);                                                 \
 
 #endif
 
