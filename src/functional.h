@@ -17,21 +17,6 @@
 typedef void* func_t;
 typedef void* any_t;
 typedef char* string;
-
-#define data(NAME, FIELDS)  												\
-	struct _data_##NAME {													\
-		FIELDS																\
-	};																		\
-	typedef struct _data_##NAME* NAME; 										\
-	NAME NAME##_construct() { return malloc(sizeof(struct _data_##NAME)); }	\
-
-#define instance_functor(TYPE, IMPL) 					\
-	void fmap_##TYPE (void* func, TYPE arg) { IMPL }
-#define instance_show(TYPE, IMPL) 						\
-	string show_##TYPE (TYPE arg) { IMPL }
-#define instance_read(TYPE, IMPL)						\
-	TYPE read_##TYPE (TYPE container, const string const str) { IMPL }
-
 struct _func_partial_t {
 	void*   func;
 	void**  args;
